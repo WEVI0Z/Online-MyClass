@@ -1,0 +1,10 @@
+{
+    "editor.fontFamily": "Samsung Sans, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "editor.codeLensFontFamily": "Samsung Sans, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "monospace",
+    "editor.inlayHints.fontFamily": "Samsung Sans, 'Courier New', monospace",
+    "editor.inlayHints.fontSize": 16,
+    "debug.console.fontFamily": "Samsung Sans, 'Courier New', monospace",
+    "debug.console.fontSize": 16
+}
