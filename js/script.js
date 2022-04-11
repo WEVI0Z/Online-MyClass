@@ -245,3 +245,82 @@ const coursesData = [
     },
     
 ]
+
+function removeAllActiveClasses(listOfElements){
+    listOfElements.forEach(function(itElement) {
+        itElement.classList.remove("active");
+    })
+}
+
+function drawAllCards(cards) {
+    const cardsFragment = document.createDocumentFragment();
+
+    const cardsField = document.querySelector(".cards");
+    const cardTemplate = document.getElementById("card").content.querySelector("li");
+
+    function cleanTheField(field) {
+        field.innerHTML = "";
+    };
+
+    cleanTheField(cardsField);
+
+    cards.forEach(function(itCard, index) {
+        let newCard = cardTemplate.cloneNode(true);
+
+        newCard.dataset.category = cards[index].category.name;
+
+        newCard.querySelector(".card-img-background img").src = cards[index].image;
+        newCard.querySelector("h2").textContent = cards[index].title;
+        newCard.querySelector(".card-meta-time dd").textContent = cards[index].duration + " часов";
+        newCard.querySelector(".card-meta-raiting dd").textContent = cards[index].rating;
+        
+        cardsFragment.appendChild(newCard)
+    });
+
+    cardsField.appendChild(cardsFragment)
+}
+
+function controlThemes() {
+    const themesButtonsWrapper = document.querySelector(".theme-list");
+    const allThemesButtons = themesButtonsWrapper.querySelectorAll(".theme-button");
+    const htmlElement = document.querySelector("html");
+    
+    function themesButtonsClickHandler(evt) {
+        evt.preventDefault;
+        targetButton = evt.target.closest('li');
+
+        htmlElement.dataset.themeName = targetButton.dataset.type;
+
+        removeAllActiveClasses(allThemesButtons);
+        targetButton.querySelector(".theme-button").classList.add("active");
+    }
+
+    themesButtonsWrapper.addEventListener("click", themesButtonsClickHandler)
+}
+
+function controlCardsFilters() {
+    const filtersButtonsWrapper = document.querySelector(".card-view-buttons");
+    const allFilterButtons = filtersButtonsWrapper.querySelectorAll(".card-view-button");
+    const cardsField = document.querySelector(".cards");
+
+    function filtersButtonsClickHandler(evt) {
+        evt.preventDefault();
+        targetButton = evt.target.closest('li');
+
+        cardsField.classList.remove("standard")
+        cardsField.classList.remove("compact")
+        
+        if (targetButton.dataset.type != undefined) {
+            cardsField.classList.add(targetButton.dataset.type);
+        }
+
+        removeAllActiveClasses(allFilterButtons);
+        targetButton.querySelector(".card-view-button").classList.add("active");
+    }
+
+    filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler);
+}
+
+controlCardsFilters();
+controlThemes();
+drawAllCards(coursesData)

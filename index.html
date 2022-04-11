@@ -90,19 +90,19 @@
       <section class="settings">
         <h2>Тема</h2>
         <ul class="theme-list">
-          <li class="theme-item">
+          <li class="theme-item" data-type="light">
             <button class="theme-button active" type="button">
               <img src="img/theme-light-preview.png" width="67" height="43" alt="Белый и сиреневый цвета темы">
               <span>Светлая</span>
             </button>
           </li>
-          <li class="theme-item">
+          <li class="theme-item" data-type="dark">
             <button class="theme-button" type="button">
               <img src="img/theme-dark-preview.png" width="67" height="43" alt="тёмный и сиреневый цвета темы">
               <span>Темная</span>
             </button>
           </li>
-          <li class="theme-item">
+          <li class="theme-item" data-type="texture">
             <button class="theme-button" type="button">
               <img src="img/theme-texture-preview.png" width="67" height="43" alt="Серый камень">
               <span>Текстура</span>
@@ -226,7 +226,7 @@
                 </svg>
               </button>
             </li>
-            <li class="card-view-item">
+            <li class="card-view-item" data-type="standard">
               <button class="card-view-button" type="button">
                 <span class="visually-hidden">Список</span>
                 <svg width="30" height="13" viewBox="0 0 30 13" fill="none">
@@ -237,7 +237,7 @@
                 </svg>
               </button>
             </li>
-            <li class="card-view-item">
+            <li class="card-view-item" data-type="compact">
               <button class="card-view-button" type="button">
                 <span class="visually-hidden">Компактный список</span>
                 <svg width="32" height="13" viewBox="0 0 32 13" fill="none">
@@ -454,6 +454,43 @@
         </ul>
       </article>
     </main>
+
+    <template id="card">
+      <li class="cards-item">
+        <article class="card">
+          <div class="card-img-background">
+            <img src="img/picture-2.svg" width="196" height="119" alt="Компьютер, планшет, разные виды мобильных телефонов">
+          </div>
+          <div class="card-content">
+            <h2>
+              <a href="#">Создание адаптивных сайтов</a>
+            </h2>
+            <p>Адаптивная верстка с нуля для начинающих на примере одностраничного сайта</p>
+            <dl class="card-meta-list">
+              <div class="card-meta card-meta-raiting">
+                <dt>
+                  <span class="visually-hidden">Рейтинг</span>
+                  <svg>
+                    <use xlink:href="#star"></use>
+                  </svg>
+                </dt>
+                <dd>4.9</dd>
+              </div>
+              <div class="card-meta card-meta-time">
+                <dt>
+                  <span class="visually-hidden">Время прочтения</span>
+                  <svg>
+                    <use xlink:href="#time"></use>
+                  </svg>
+                </dt>
+                <dd>12 часов</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </li>
+    </template>
+
     <script src="js/script.js"></script>
   </body>
 </html>
