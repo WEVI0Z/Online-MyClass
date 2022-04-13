@@ -1,52 +1,24 @@
-const COURSE_CATEGORYES = {
-    javaScript: {
-        name : "JavaScirpt"
-    },
-    wordPress: {
-        name : "WordPress"
-    },
-    react: {
-        name : "React"
-    },
-    php: {
-        name : "PHP"
-    },
-    python: {
-        name : "Python"
-    },
-    css: {
-        name : "CSS"
-    },
-    html5: {
-        name : "HTML5"
-    },
-    nodeJs: {
-        name : "Node.JS"
-    },
-    angular: {
-        name : "Angular"
-    },
-    vueJs: {
-        name : "Vue JS"
-    },
-    django: {
-        name : "Django"
-    },
-    reduxFramework: {
-        name : "Redus Framework"
-    },
-    linux: {
-        name : "Linux"
-    },
-    bootstrap: {
-        name : "Bootstrap"
-    }
-}
+const COURSE_CATEGORYES = new Map([
+    ["javaScript", "JavaScirpt"],
+    ["wordPress", "WordPress"],
+    ["react", "React"],
+    ["php", "PHP"],
+    ["python", "Python"],
+    ["css", "CSS"],
+    ["html5", "HTML5"],
+    ["nodeJs", "Node.JS"],
+    ["angular", "Angular"],
+    ["vueJs", "Vue JS"],
+    ["django", "Django"],
+    ["reduxFramework", "Redux Framework"],
+    ["linux", "Linux"],
+    ["bootstrap", "Bootstrap"]
+])
 
 const coursesData = [
     {
         title : "Полный курс по JavaScript + React - с нуля до результата",
-        category : COURSE_CATEGORYES.javaScript,
+        category : COURSE_CATEGORYES.get("javaScript"),
         duration : 58,
         rating : 4.8,
         image : "img/picture-1.svg"
@@ -54,7 +26,7 @@ const coursesData = [
     
     {
         title : "Современный JavaScript - с Нуля до Junior Специалиста",
-        category : COURSE_CATEGORYES.javaScript,
+        category : COURSE_CATEGORYES.get("javaScript"),
         duration : 66,
         rating : 4.6,
         image : "img/picture-2.svg"
@@ -62,7 +34,7 @@ const coursesData = [
     
     {
         title : "Посадка верстки и создание тем на CMS WordPress",
-        category : COURSE_CATEGORYES.wordPress,
+        category : COURSE_CATEGORYES.get("wordPress"),
         duration : 6,
         rating : 4.8,
         image : "img/picture-3.svg"
@@ -70,7 +42,7 @@ const coursesData = [
     
     {
         title : "Создание сайтов без программирования на WordPress",
-        category : COURSE_CATEGORYES.wordPress,
+        category : COURSE_CATEGORYES.get("wordPress"),
         duration : 15,
         rating : 4.5,
         image : "img/picture-4.svg"
@@ -78,7 +50,7 @@ const coursesData = [
     
     {
         title : "React с нуля для начинающих",
-        category : COURSE_CATEGORYES.react,
+        category : COURSE_CATEGORYES.get("react"),
         duration : 13,
         rating : 4.8,
         image : "img/picture-5.svg"
@@ -86,7 +58,7 @@ const coursesData = [
     
     {
         title : "React + Redux",
-        category : COURSE_CATEGORYES.react,
+        category : COURSE_CATEGORYES.get("react"),
         duration : 22,
         rating : 4.6,
         image : "img/picture-6.svg"
@@ -94,7 +66,7 @@ const coursesData = [
     
     {
         title : "PHP с нуля",
-        category : COURSE_CATEGORYES.php,
+        category : COURSE_CATEGORYES.get("php"),
         duration : 43,
         rating : 3.4,
         image : "img/picture-1.svg"
@@ -102,7 +74,7 @@ const coursesData = [
     
     {
         title : "Python с нуля",
-        category : COURSE_CATEGORYES.python,
+        category : COURSE_CATEGORYES.get("python"),
         duration : 23,
         rating : 4.5,
         image : "img/picture-2.svg"
@@ -110,7 +82,7 @@ const coursesData = [
     
     {
         title : "CSS с нуля",
-        category : COURSE_CATEGORYES.css,
+        category : COURSE_CATEGORYES.get("css"),
         duration : 56,
         rating : 5.0,
         image : "img/picture-3.svg"
@@ -118,7 +90,7 @@ const coursesData = [
     
     {
         title : "HTML5 с нуля",
-        category : COURSE_CATEGORYES.html5,
+        category : COURSE_CATEGORYES.get("html5"),
         duration : 34,
         rating : 2.9,
         image : "img/picture-4.svg"
@@ -126,7 +98,7 @@ const coursesData = [
     
     {
         title : "Node.JS с нуля",
-        category : COURSE_CATEGORYES.nodeJs,
+        category : COURSE_CATEGORYES.get("nodeJs"),
         duration : 47,
         rating : 4.1,
         image : "img/picture-5.svg"
@@ -134,7 +106,7 @@ const coursesData = [
     
     {
         title : "Angular с нуля",
-        category : COURSE_CATEGORYES.angular,
+        category : COURSE_CATEGORYES.get("angular"),
         duration : 32,
         rating : 4.5,
         image : "img/picture-6.svg"
@@ -142,7 +114,7 @@ const coursesData = [
     
     {
         title : "Vue JS с нуля",
-        category : COURSE_CATEGORYES.vueJs,
+        category : COURSE_CATEGORYES.get("vueJs"),
         duration : 90,
         rating : 3.9,
         image : "img/picture-1.svg"
@@ -150,7 +122,7 @@ const coursesData = [
     
     {
         title : "Django с нуля",
-        category : COURSE_CATEGORYES.django,
+        category : COURSE_CATEGORYES.get("django"),
         duration : 46,
         rating : 2.1,
         image : "img/picture-2.svg"
@@ -158,7 +130,7 @@ const coursesData = [
     
     {
         title : "Redux Framework с нуля",
-        category : COURSE_CATEGORYES.reduxFramework,
+        category : COURSE_CATEGORYES.get("reduxFramework"),
         duration : 90,
         rating : 4.8,
         image : "img/picture-3.svg"
@@ -166,7 +138,7 @@ const coursesData = [
     
     {
         title : "Linux с нуля",
-        category : COURSE_CATEGORYES.linux,
+        category : COURSE_CATEGORYES.get("linux"),
         duration : 34,
         rating : 4.3,
         image : "img/picture-4.svg"
@@ -174,7 +146,7 @@ const coursesData = [
     
     {
         title : "Bootstrap с нуля",
-        category : COURSE_CATEGORYES.bootstrap,
+        category : COURSE_CATEGORYES.get("bootstrap"),
         duration : 65,
         rating : 1.9,
         image : "img/picture-5.svg"
@@ -182,7 +154,7 @@ const coursesData = [
     
     {
         title : "PHP для продвинутых",
-        category : COURSE_CATEGORYES.php,
+        category : COURSE_CATEGORYES.get("php"),
         duration : 67,
         rating : 3.2,
         image : "img/picture-6.svg"
@@ -190,7 +162,7 @@ const coursesData = [
     
     {
         title : "Python для продвинутых",
-        category : COURSE_CATEGORYES.python,
+        category : COURSE_CATEGORYES.get("python"),
         duration : 87,
         rating : 4.1,
         image : "img/picture-1.svg"
@@ -198,7 +170,7 @@ const coursesData = [
     
     {
         title : "CSS для продвинутых",
-        category : COURSE_CATEGORYES.css,
+        category : COURSE_CATEGORYES.get("css"),
         duration : 45,
         rating : 3.7,
         image : "img/picture-2.svg"
@@ -206,7 +178,7 @@ const coursesData = [
     
     {
         title : "HTML5 для продвинутых",
-        category : COURSE_CATEGORYES.html5,
+        category : COURSE_CATEGORYES.get("html5"),
         duration : 76,
         rating : 4.5,
         image : "img/picture-3.svg"
@@ -214,7 +186,7 @@ const coursesData = [
     
     {
         title : "Node.JS для продвинутых",
-        category : COURSE_CATEGORYES.nodeJs,
+        category : COURSE_CATEGORYES.get("nodeJs"),
         duration : 24,
         rating : 4.7,
         image : "img/picture-4.svg"
@@ -222,7 +194,7 @@ const coursesData = [
     
     {
         title : "Angular для продвинутых",
-        category : COURSE_CATEGORYES.angular,
+        category : COURSE_CATEGORYES.get("angular"),
         duration : 15,
         rating : 2.3,
         image : "img/picture-5.svg"
@@ -230,7 +202,7 @@ const coursesData = [
     
     {
         title : "Vue JS для продвинутых",
-        category : COURSE_CATEGORYES.vueJs,
+        category : COURSE_CATEGORYES.get("vueJs"),
         duration : 63,
         rating : 4.1,
         image : "img/picture-6.svg"
@@ -238,7 +210,7 @@ const coursesData = [
     
     {
         title : "Django для продвинутых",
-        category : COURSE_CATEGORYES.django,
+        category : COURSE_CATEGORYES.get("django"),
         duration : 46,
         rating : 4.2,
         image : "img/picture-1.svg"
@@ -252,32 +224,52 @@ function removeAllActiveClasses(listOfElements){
     })
 }
 
-function drawAllCards(cards) {
-    const cardsFragment = document.createDocumentFragment();
-
+function getCards(cardsData) {
     const cardsField = document.querySelector(".cards");
-    const cardTemplate = document.getElementById("card").content.querySelector("li");
 
-    function cleanTheField(field) {
+    function drawAllCards(field) {
         field.innerHTML = "";
+        field.insertAdjacentHTML("afterBegin", cards.join(""))
     };
 
-    cleanTheField(cardsField);
-
-    cards.forEach(function(itCard) {
-        let newCard = cardTemplate.cloneNode(true);
-
-        newCard.dataset.category = itCard.category.name;
-
-        newCard.querySelector(".card-img-background img").src = itCard.image;
-        newCard.querySelector("h2").textContent = itCard.title;
-        newCard.querySelector(".card-meta-time dd").textContent = itCard.duration + " часов";
-        newCard.querySelector(".card-meta-raiting dd").textContent = itCard.rating;
-        
-        cardsFragment.appendChild(newCard)
+    const cards =  cardsData.map(function(itCard) {
+        return ` 
+        <li class="cards-item" data-category="${itCard.category}">
+            <article class="card">
+            <div class="card-img-background">
+                <img src="${itCard.image}" width="196" height="119" alt="Компьютер, планшет, разные виды мобильных телефонов">
+            </div>
+            <div class="card-content">
+                <h2>
+                <a href="#">${itCard.title}</a>
+                </h2>
+                <p>Адаптивная верстка с нуля для начинающих на примере одностраничного сайта</p>
+                <dl class="card-meta-list">
+                <div class="card-meta card-meta-raiting">
+                    <dt>
+                    <span class="visually-hidden">Рейтинг</span>
+                    <svg>
+                        <use xlink:href="#star"></use>
+                    </svg>
+                    </dt>
+                    <dd>${itCard.rating}</dd>
+                </div>
+                <div class="card-meta card-meta-time">
+                    <dt>
+                    <span class="visually-hidden">Время прочтения</span>
+                    <svg>
+                        <use xlink:href="#time"></use>
+                    </svg>
+                    </dt>
+                    <dd>${itCard.duration + " часов"}</dd>
+                </div>
+                </dl>
+            </div>
+            </article>
+        </li>`;
     });
 
-    cardsField.appendChild(cardsFragment)
+    drawAllCards(cardsField);
 }
 
 function controlThemes() {
@@ -323,4 +315,4 @@ function controlCardsFilters() {
 
 controlCardsFilters();
 controlThemes();
-drawAllCards(coursesData)
+getCards(coursesData)
