@@ -1,4 +1,4 @@
-const courseCategoryes = {
+const COURSE_CATEGORYES = {
     javaScript: {
         name : "JavaScirpt"
     },
@@ -46,7 +46,7 @@ const courseCategoryes = {
 const coursesData = [
     {
         title : "Полный курс по JavaScript + React - с нуля до результата",
-        category : courseCategoryes.javaScript,
+        category : COURSE_CATEGORYES.javaScript,
         duration : 58,
         rating : 4.8,
         image : "img/picture-1.svg"
@@ -54,7 +54,7 @@ const coursesData = [
     
     {
         title : "Современный JavaScript - с Нуля до Junior Специалиста",
-        category : courseCategoryes.javaScript,
+        category : COURSE_CATEGORYES.javaScript,
         duration : 66,
         rating : 4.6,
         image : "img/picture-2.svg"
@@ -62,7 +62,7 @@ const coursesData = [
     
     {
         title : "Посадка верстки и создание тем на CMS WordPress",
-        category : courseCategoryes.wordPress,
+        category : COURSE_CATEGORYES.wordPress,
         duration : 6,
         rating : 4.8,
         image : "img/picture-3.svg"
@@ -70,7 +70,7 @@ const coursesData = [
     
     {
         title : "Создание сайтов без программирования на WordPress",
-        category : courseCategoryes.wordPress,
+        category : COURSE_CATEGORYES.wordPress,
         duration : 15,
         rating : 4.5,
         image : "img/picture-4.svg"
@@ -78,7 +78,7 @@ const coursesData = [
     
     {
         title : "React с нуля для начинающих",
-        category : courseCategoryes.react,
+        category : COURSE_CATEGORYES.react,
         duration : 13,
         rating : 4.8,
         image : "img/picture-5.svg"
@@ -86,7 +86,7 @@ const coursesData = [
     
     {
         title : "React + Redux",
-        category : courseCategoryes.react,
+        category : COURSE_CATEGORYES.react,
         duration : 22,
         rating : 4.6,
         image : "img/picture-6.svg"
@@ -94,7 +94,7 @@ const coursesData = [
     
     {
         title : "PHP с нуля",
-        category : courseCategoryes.php,
+        category : COURSE_CATEGORYES.php,
         duration : 43,
         rating : 3.4,
         image : "img/picture-1.svg"
@@ -102,7 +102,7 @@ const coursesData = [
     
     {
         title : "Python с нуля",
-        category : courseCategoryes.python,
+        category : COURSE_CATEGORYES.python,
         duration : 23,
         rating : 4.5,
         image : "img/picture-2.svg"
@@ -110,7 +110,7 @@ const coursesData = [
     
     {
         title : "CSS с нуля",
-        category : courseCategoryes.css,
+        category : COURSE_CATEGORYES.css,
         duration : 56,
         rating : 5.0,
         image : "img/picture-3.svg"
@@ -118,7 +118,7 @@ const coursesData = [
     
     {
         title : "HTML5 с нуля",
-        category : courseCategoryes.html5,
+        category : COURSE_CATEGORYES.html5,
         duration : 34,
         rating : 2.9,
         image : "img/picture-4.svg"
@@ -126,7 +126,7 @@ const coursesData = [
     
     {
         title : "Node.JS с нуля",
-        category : courseCategoryes.nodeJs,
+        category : COURSE_CATEGORYES.nodeJs,
         duration : 47,
         rating : 4.1,
         image : "img/picture-5.svg"
@@ -134,7 +134,7 @@ const coursesData = [
     
     {
         title : "Angular с нуля",
-        category : courseCategoryes.angular,
+        category : COURSE_CATEGORYES.angular,
         duration : 32,
         rating : 4.5,
         image : "img/picture-6.svg"
@@ -142,7 +142,7 @@ const coursesData = [
     
     {
         title : "Vue JS с нуля",
-        category : courseCategoryes.vueJs,
+        category : COURSE_CATEGORYES.vueJs,
         duration : 90,
         rating : 3.9,
         image : "img/picture-1.svg"
@@ -150,7 +150,7 @@ const coursesData = [
     
     {
         title : "Django с нуля",
-        category : courseCategoryes.django,
+        category : COURSE_CATEGORYES.django,
         duration : 46,
         rating : 2.1,
         image : "img/picture-2.svg"
@@ -158,7 +158,7 @@ const coursesData = [
     
     {
         title : "Redux Framework с нуля",
-        category : courseCategoryes.reduxFramework,
+        category : COURSE_CATEGORYES.reduxFramework,
         duration : 90,
         rating : 4.8,
         image : "img/picture-3.svg"
@@ -166,7 +166,7 @@ const coursesData = [
     
     {
         title : "Linux с нуля",
-        category : courseCategoryes.linux,
+        category : COURSE_CATEGORYES.linux,
         duration : 34,
         rating : 4.3,
         image : "img/picture-4.svg"
@@ -174,7 +174,7 @@ const coursesData = [
     
     {
         title : "Bootstrap с нуля",
-        category : courseCategoryes.bootstrap,
+        category : COURSE_CATEGORYES.bootstrap,
         duration : 65,
         rating : 1.9,
         image : "img/picture-5.svg"
@@ -182,7 +182,7 @@ const coursesData = [
     
     {
         title : "PHP для продвинутых",
-        category : courseCategoryes.php,
+        category : COURSE_CATEGORYES.php,
         duration : 67,
         rating : 3.2,
         image : "img/picture-6.svg"
@@ -190,7 +190,7 @@ const coursesData = [
     
     {
         title : "Python для продвинутых",
-        category : courseCategoryes.python,
+        category : COURSE_CATEGORYES.python,
         duration : 87,
         rating : 4.1,
         image : "img/picture-1.svg"
@@ -198,7 +198,7 @@ const coursesData = [
     
     {
         title : "CSS для продвинутых",
-        category : courseCategoryes.css,
+        category : COURSE_CATEGORYES.css,
         duration : 45,
         rating : 3.7,
         image : "img/picture-2.svg"
@@ -206,7 +206,7 @@ const coursesData = [
     
     {
         title : "HTML5 для продвинутых",
-        category : courseCategoryes.html5,
+        category : COURSE_CATEGORYES.html5,
         duration : 76,
         rating : 4.5,
         image : "img/picture-3.svg"
@@ -214,7 +214,7 @@ const coursesData = [
     
     {
         title : "Node.JS для продвинутых",
-        category : courseCategoryes.nodeJs,
+        category : COURSE_CATEGORYES.nodeJs,
         duration : 24,
         rating : 4.7,
         image : "img/picture-4.svg"
@@ -222,7 +222,7 @@ const coursesData = [
     
     {
         title : "Angular для продвинутых",
-        category : courseCategoryes.angular,
+        category : COURSE_CATEGORYES.angular,
         duration : 15,
         rating : 2.3,
         image : "img/picture-5.svg"
@@ -230,7 +230,7 @@ const coursesData = [
     
     {
         title : "Vue JS для продвинутых",
-        category : courseCategoryes.vueJs,
+        category : COURSE_CATEGORYES.vueJs,
         duration : 63,
         rating : 4.1,
         image : "img/picture-6.svg"
@@ -238,7 +238,7 @@ const coursesData = [
     
     {
         title : "Django для продвинутых",
-        category : courseCategoryes.django,
+        category : COURSE_CATEGORYES.django,
         duration : 46,
         rating : 4.2,
         image : "img/picture-1.svg"
@@ -264,15 +264,15 @@ function drawAllCards(cards) {
 
     cleanTheField(cardsField);
 
-    cards.forEach(function(itCard, index) {
+    cards.forEach(function(itCard) {
         let newCard = cardTemplate.cloneNode(true);
 
-        newCard.dataset.category = cards[index].category.name;
+        newCard.dataset.category = itCard.category.name;
 
-        newCard.querySelector(".card-img-background img").src = cards[index].image;
-        newCard.querySelector("h2").textContent = cards[index].title;
-        newCard.querySelector(".card-meta-time dd").textContent = cards[index].duration + " часов";
-        newCard.querySelector(".card-meta-raiting dd").textContent = cards[index].rating;
+        newCard.querySelector(".card-img-background img").src = itCard.image;
+        newCard.querySelector("h2").textContent = itCard.title;
+        newCard.querySelector(".card-meta-time dd").textContent = itCard.duration + " часов";
+        newCard.querySelector(".card-meta-raiting dd").textContent = itCard.rating;
         
         cardsFragment.appendChild(newCard)
     });
@@ -286,7 +286,7 @@ function controlThemes() {
     const htmlElement = document.querySelector("html");
     
     function themesButtonsClickHandler(evt) {
-        evt.preventDefault;
+        evt.preventDefault();
         targetButton = evt.target.closest('li');
 
         htmlElement.dataset.themeName = targetButton.dataset.type;
