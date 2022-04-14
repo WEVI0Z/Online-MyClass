@@ -1,5 +1,5 @@
 const COURSE_CATEGORYES = new Map([
-    ["javaScript", "JavaScirpt"],
+    ["javaScript", "JavaScript"],
     ["wordPress", "WordPress"],
     ["react", "React"],
     ["php", "PHP"],
@@ -313,6 +313,33 @@ function controlCardsFilters() {
     filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler);
 }
 
+function controlCatedoriesFilters(cardsData) {
+    const filtersButtonsWrapper = document.querySelector(".hashtags");
+
+    function filtersButtonsClickHandler(evt) {
+        evt.preventDefault;
+
+        const button = evt.target.closest(".hashtag");
+        const randomCard = document.querySelector(".cards-item");
+        let filteredCards;
+
+        if (button) {
+            if (randomCard.dataset.category == button.dataset.category) {
+                filteredCards = cardsData;
+            } else {
+                filteredCards = cardsData.filter((itCard) => {
+                    if (itCard.category == button.dataset.category) return itCard;
+                })
+            }
+
+            getCards(filteredCards);
+        }
+    }
+
+    filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler)
+}
+
+controlCatedoriesFilters(coursesData);
 controlCardsFilters();
 controlThemes();
 getCards(coursesData)
