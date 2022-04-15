@@ -315,18 +315,21 @@ function controlCardsFilters() {
 
 function controlCatedoriesFilters(cardsData) {
     const filtersButtonsWrapper = document.querySelector(".hashtags");
+    let isActive = false;
 
     function filtersButtonsClickHandler(evt) {
         evt.preventDefault;
 
         const button = evt.target.closest(".hashtag");
-        const randomCard = document.querySelector(".cards-item");
         let filteredCards;
 
         if (button) {
-            if (randomCard.dataset.category == button.dataset.category) {
+            if (isActive) {
                 filteredCards = cardsData;
+                isActive = false;
             } else {
+                isActive = true;
+
                 filteredCards = cardsData.filter((itCard) => {
                     if (itCard.category == button.dataset.category) return itCard;
                 })
