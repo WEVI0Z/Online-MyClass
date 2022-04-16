@@ -315,7 +315,7 @@ function controlCardsFilters() {
 
 function controlCatedoriesFilters(cardsData) {
     const filtersButtonsWrapper = document.querySelector(".hashtags");
-    let isActive = false;
+    let cardState = null;
 
     function filtersButtonsClickHandler(evt) {
         evt.preventDefault;
@@ -324,11 +324,11 @@ function controlCatedoriesFilters(cardsData) {
         let filteredCards;
 
         if (button) {
-            if (isActive) {
+            if (cardState == button.dataset.category) {
                 filteredCards = cardsData;
-                isActive = false;
+                cardState = null;
             } else {
-                isActive = true;
+                cardState = button.dataset.category;
 
                 filteredCards = cardsData.filter((itCard) => {
                     if (itCard.category == button.dataset.category) return itCard;
