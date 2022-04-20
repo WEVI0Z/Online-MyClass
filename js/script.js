@@ -1,222 +1,257 @@
-const COURSE_CATEGORYES = new Map([
-    ["javaScript", "JavaScript"],
-    ["wordPress", "WordPress"],
-    ["react", "React"],
-    ["php", "PHP"],
-    ["python", "Python"],
-    ["css", "CSS"],
-    ["html5", "HTML5"],
-    ["nodeJs", "Node.JS"],
-    ["angular", "Angular"],
-    ["vueJs", "Vue JS"],
-    ["django", "Django"],
-    ["reduxFramework", "Redux Framework"],
-    ["linux", "Linux"],
-    ["bootstrap", "Bootstrap"]
-])
-
 const coursesData = [
     {
         title : "Полный курс по JavaScript + React - с нуля до результата",
-        category : COURSE_CATEGORYES.get("javaScript"),
+        category :  "JavaScript",
         duration : 58,
         rating : 4.8,
-        image : "img/picture-1.svg"
+        image : "img/picture-1.svg",
+        price: 39
     },
     
     {
         title : "Современный JavaScript - с Нуля до Junior Специалиста",
-        category : COURSE_CATEGORYES.get("javaScript"),
+        category : "JavaScript",
         duration : 66,
         rating : 4.6,
-        image : "img/picture-2.svg"
+        image : "img/picture-2.svg",
+        price: 29
     },
     
     {
         title : "Посадка верстки и создание тем на CMS WordPress",
-        category : COURSE_CATEGORYES.get("wordPress"),
+        category : "WordPress",
         duration : 6,
         rating : 4.8,
-        image : "img/picture-3.svg"
+        image : "img/picture-3.svg",
+        price: 14
     },
     
     {
         title : "Создание сайтов без программирования на WordPress",
-        category : COURSE_CATEGORYES.get("wordPress"),
+        category : "WordPress",
         duration : 15,
         rating : 4.5,
-        image : "img/picture-4.svg"
+        image : "img/picture-4.svg",
+        price: 76
     },
     
     {
         title : "React с нуля для начинающих",
-        category : COURSE_CATEGORYES.get("react"),
+        category : "React",
         duration : 13,
         rating : 4.8,
-        image : "img/picture-5.svg"
+        image : "img/picture-5.svg",
+        price: 54
     },
     
     {
         title : "React + Redux",
-        category : COURSE_CATEGORYES.get("react"),
+        category : "React",
         duration : 22,
         rating : 4.6,
-        image : "img/picture-6.svg"
+        image : "img/picture-6.svg",
+        price: 91
     },
     
     {
         title : "PHP с нуля",
-        category : COURSE_CATEGORYES.get("php"),
+        category : "PHP",
         duration : 43,
         rating : 3.4,
-        image : "img/picture-1.svg"
+        image : "img/picture-1.svg",
+        price: 43
     },
     
     {
         title : "Python с нуля",
-        category : COURSE_CATEGORYES.get("python"),
+        category : "PHP",
         duration : 23,
         rating : 4.5,
-        image : "img/picture-2.svg"
+        image : "img/picture-2.svg",
+        price: 19
     },
     
     {
         title : "CSS с нуля",
-        category : COURSE_CATEGORYES.get("css"),
+        category : "CSS",
         duration : 56,
         rating : 5.0,
-        image : "img/picture-3.svg"
+        image : "img/picture-3.svg",
+        price: 59
     },
     
     {
         title : "HTML5 с нуля",
-        category : COURSE_CATEGORYES.get("html5"),
+        category : "HTML5",
         duration : 34,
         rating : 2.9,
-        image : "img/picture-4.svg"
+        image : "img/picture-4.svg",
+        price: 63
     },
     
     {
         title : "Node.JS с нуля",
-        category : COURSE_CATEGORYES.get("nodeJs"),
+        category : "Node JS",
         duration : 47,
         rating : 4.1,
-        image : "img/picture-5.svg"
+        image : "img/picture-5.svg",
+        price: 97
     },
     
     {
         title : "Angular с нуля",
-        category : COURSE_CATEGORYES.get("angular"),
+        category : "Angular",
         duration : 32,
         rating : 4.5,
-        image : "img/picture-6.svg"
+        image : "img/picture-6.svg",
+        price: 79
     },
     
     {
         title : "Vue JS с нуля",
-        category : COURSE_CATEGORYES.get("vueJs"),
+        category : "Vue JS",
         duration : 90,
         rating : 3.9,
-        image : "img/picture-1.svg"
+        image : "img/picture-1.svg",
+        price: 109
     },
     
     {
         title : "Django с нуля",
-        category : COURSE_CATEGORYES.get("django"),
+        category : "Django",
         duration : 46,
         rating : 2.1,
-        image : "img/picture-2.svg"
+        image : "img/picture-2.svg",
+        price: 145
     },
     
     {
         title : "Redux Framework с нуля",
-        category : COURSE_CATEGORYES.get("reduxFramework"),
+        category : "Redux Framework",
         duration : 90,
         rating : 4.8,
-        image : "img/picture-3.svg"
+        image : "img/picture-3.svg",
+        price: 31
     },
     
     {
         title : "Linux с нуля",
-        category : COURSE_CATEGORYES.get("linux"),
+        category : "Linux",
         duration : 34,
         rating : 4.3,
-        image : "img/picture-4.svg"
+        image : "img/picture-4.svg",
+        price: 54
     },
     
     {
         title : "Bootstrap с нуля",
-        category : COURSE_CATEGORYES.get("bootstrap"),
+        category : "Bootstrap",
         duration : 65,
         rating : 1.9,
-        image : "img/picture-5.svg"
+        image : "img/picture-5.svg",
+        price: 69
     },
     
     {
         title : "PHP для продвинутых",
-        category : COURSE_CATEGORYES.get("php"),
+        category : "PHP",
         duration : 67,
         rating : 3.2,
-        image : "img/picture-6.svg"
+        image : "img/picture-6.svg",
+        price: 71
     },
     
     {
         title : "Python для продвинутых",
-        category : COURSE_CATEGORYES.get("python"),
+        category : "Python",
         duration : 87,
         rating : 4.1,
-        image : "img/picture-1.svg"
+        image : "img/picture-1.svg",
+        price: 25
     },
     
     {
         title : "CSS для продвинутых",
-        category : COURSE_CATEGORYES.get("css"),
+        category : "CSS",
         duration : 45,
         rating : 3.7,
-        image : "img/picture-2.svg"
+        image : "img/picture-2.svg",
+        price: 50
     },
     
     {
         title : "HTML5 для продвинутых",
-        category : COURSE_CATEGORYES.get("html5"),
+        category : "HTML5",
         duration : 76,
         rating : 4.5,
-        image : "img/picture-3.svg"
+        image : "img/picture-3.svg",
+        price: 28
     },
     
     {
         title : "Node.JS для продвинутых",
-        category : COURSE_CATEGORYES.get("nodeJs"),
+        category : "Node JS",
         duration : 24,
         rating : 4.7,
-        image : "img/picture-4.svg"
+        image : "img/picture-4.svg",
+        price: 53
     },
     
     {
         title : "Angular для продвинутых",
-        category : COURSE_CATEGORYES.get("angular"),
+        category : "Angular",
         duration : 15,
         rating : 2.3,
-        image : "img/picture-5.svg"
+        image : "img/picture-5.svg",
+        price: 84
     },
     
     {
         title : "Vue JS для продвинутых",
-        category : COURSE_CATEGORYES.get("vueJs"),
+        category : "Vue JS",
         duration : 63,
         rating : 4.1,
-        image : "img/picture-6.svg"
+        image : "img/picture-6.svg",
+        price: 150
     },
     
     {
         title : "Django для продвинутых",
-        category : COURSE_CATEGORYES.get("django"),
+        category : "Django",
         duration : 46,
         rating : 4.2,
-        image : "img/picture-1.svg"
-    },
-    
-]
+        image : "img/picture-1.svg",
+        price: 66
+    }
+];
+
+function getCurrentCardsData() {
+    const cards =  document.querySelectorAll(".cards-item");
+
+    const currentData = []
+
+    cards.forEach((itCard) => {
+        const cardTitle = itCard.querySelector("h2").innerText;
+        const cardCategory = itCard.querySelector("p").innerText;
+        const cardDuration =Number(itCard.querySelector(".card-meta-time dd").innerText.split(" ")[0]);
+        const cardRating = Number(itCard.querySelector(".card-meta-raiting dd") .innerText);
+        const cardImage = itCard.querySelector("img").src;
+        const cardPrice = Number(itCard.querySelector(".card-meta-price dd").innerText.split(" ")[0]);
+
+        const cardData = {
+            title : cardTitle,
+            category : cardCategory,
+            duration : cardDuration,
+            rating : cardRating,
+            image : cardImage,
+            price: cardPrice
+        }
+
+        currentData.push(cardData);
+    })    
+
+    return currentData;
+}
 
 function removeAllActiveClasses(listOfElements){
     listOfElements.forEach(function(itElement) {
@@ -263,6 +298,38 @@ function getCards(cardsData) {
                     </dt>
                     <dd>${itCard.duration + " часов"}</dd>
                 </div>
+                <div class="card-meta card-meta-price">
+                  <dt>
+                    <span class="visually-hidden">Время прочтения</span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 230.562 230.562" style="enable-background:new 0 0 230.562 230.562;" xml:space="preserve">
+                      <g>
+                        <g>
+                          <g>
+                            <path d="M228.334,122.532L121.725,15.924c-1.02-1.02-2.308-1.73-3.715-2.044L58.156,0.471c-2.546-0.573-5.202,0.203-7.043,2.044
+                              L2.228,51.403c-1.864,1.864-2.63,4.56-2.024,7.127l13.982,59.278c0.325,1.375,1.027,2.633,2.026,3.634l106.611,106.606
+                              c1.428,1.428,3.36,2.229,5.379,2.229c2.019,0,3.954-0.801,5.379-2.229l94.749-94.754
+                              C231.306,130.324,231.306,125.505,228.334,122.532z M128.203,211.91L28.5,112.208L15.987,59.163l42.925-42.93l53.612,12.011
+                              l99.669,99.667L128.203,211.91z"/>
+                            <path d="M86.401,45.544c-5.42-5.42-12.623-8.402-20.284-8.402s-14.865,2.985-20.284,8.402c-11.182,11.187-11.182,29.384,0,40.569
+                              c5.417,5.417,12.623,8.4,20.284,8.4s14.865-2.983,20.284-8.402C97.581,74.926,97.581,56.729,86.401,45.544z M75.64,75.349
+                              c-2.544,2.544-5.927,3.944-9.523,3.944s-6.98-1.4-9.523-3.944c-5.25-5.25-5.25-13.797,0-19.049
+                              c2.544-2.544,5.927-3.946,9.523-3.946s6.98,1.403,9.523,3.944C80.887,61.555,80.887,70.099,75.64,75.349z"/>
+                            <path d="M105.506,92.869l-10.857,10.857l5.23,5.227c-6.749,9.724-6.807,19.754-0.003,26.554
+                              c3.632,3.632,7.636,5.473,11.907,5.473h0.003c6.886-0.003,13.416-4.76,19.498-9.625c4.522-3.563,7.989-5.372,10.305-5.372
+                              c0.9,0,1.578,0.271,2.189,0.885c0.893,0.893,1.978,2.412,1.131,5.306c-0.654,2.234-2.359,4.809-4.798,7.246
+                              c-4.208,4.208-10.771,6.404-14.652,4.824l-2.356-0.959l-5.793,14.329l2.359,0.949c2.876,1.151,5.861,1.74,8.874,1.74
+                              c5.671-0.003,11.405-2.062,16.708-5.975l5.64,5.64l10.857-10.855l-5.922-5.919c5.739-7.89,7.811-19.316-0.621-27.751
+                              c-3.743-3.743-7.915-5.64-12.404-5.64c-7.251,0-13.995,4.791-20.845,10.135c-2.83,2.234-6.711,5.29-9.209,5.29
+                              c-0.687,0-1.238-0.249-1.793-0.801c-0.789-0.789-1.593-1.996-0.804-4.367c0.647-1.953,2.214-4.208,4.532-6.526
+                              c2.82-2.825,7.048-4.798,10.282-4.798c0.495,0,0.946,0.051,1.339,0.147l2.204,0.545l4.996-13.609l-2.452-0.842
+                              c-6.883-2.364-13.323-1.403-20.274,3.168L105.506,92.869z"/>
+                          </g>
+                        </g>
+                      </g>
+                      </svg>
+                  </dt>
+                  <dd>${itCard.price} BYN</dd>
+                </div>
                 </dl>
             </div>
             </article>
@@ -290,10 +357,10 @@ function controlThemes() {
     themesButtonsWrapper.addEventListener("click", themesButtonsClickHandler)
 }
 
-function controlCardsFilters() {
+function controlCardsThemes() {
     const cardsField = document.querySelector(".cards");
-    const filtersButtonsWrapper = document.querySelector(".card-view-buttons");
-    const allFilterButtons = filtersButtonsWrapper.querySelectorAll(".card-view-button");
+    const themesButtonsWrapper = document.querySelector(".card-view-buttons");
+    const allFilterButtons = themesButtonsWrapper.querySelectorAll(".card-view-button");
 
     function filtersButtonsClickHandler(evt) {
         evt.preventDefault();
@@ -310,10 +377,10 @@ function controlCardsFilters() {
         targetButton.querySelector(".card-view-button").classList.add("active");
     }
 
-    filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler);
+    themesButtonsWrapper.addEventListener("click", filtersButtonsClickHandler);
 }
 
-function controlCatedoriesFilters(cardsData) {
+function controlCategoriesFilters(cardsData) {
     const filtersButtonsWrapper = document.querySelector(".hashtags");
 
     function createFiltersArray() {
@@ -362,10 +429,63 @@ function controlCatedoriesFilters(cardsData) {
 
     drawCategoriesButtons();
 
-    filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler)
+    filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler);
 }
 
-getCards(coursesData)
-controlCatedoriesFilters(coursesData);
-controlCardsFilters();
+function controlSortingFilters() {
+    const SORT_TYPES = {
+        duration : sortByDuration,
+        raiting : sortByRating,
+        price : sortByPrice
+    }
+
+    const sortButtonsWrapper = document.querySelector(".sort-list");   
+
+    function sortByDuration(firstItem, secondItem) {
+        if (firstItem.duration > secondItem.duration) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+    function sortByRating(firstItem, secondItem) {
+        if (firstItem.rating > secondItem.rating) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+    function sortByPrice(firstItem, secondItem) {
+        if (firstItem.price > secondItem.price) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+    function sortButtonClickHandler(evt) {
+        evt.preventDefault();
+        
+        const button = evt.target.closest(".sort-item");
+
+        if(button) {
+            const currentCards = getCurrentCardsData();
+
+            console.log(currentCards[0].rating)
+            
+            currentCards.sort(SORT_TYPES[`${button.dataset.type}`]);
+
+            getCards(currentCards);
+        }
+    }
+
+    sortButtonsWrapper.addEventListener("click", sortButtonClickHandler);
+}
+
+getCards(coursesData);
+controlCategoriesFilters(coursesData);
+controlSortingFilters();
+controlCardsThemes();
 controlThemes();
