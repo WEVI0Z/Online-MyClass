@@ -224,13 +224,13 @@ function removeAllActiveClasses(listOfElements){
     })
 }
 
+function drawMarkup(field, markup) {
+    field.innerHTML = "";
+    field.insertAdjacentHTML("afterBegin", markup);
+};
+
 function getCards(cardsData) {
     const cardsField = document.querySelector(".cards");
-
-    function drawAllCards(field) {
-        field.innerHTML = "";
-        field.insertAdjacentHTML("afterBegin", cards.join(""))
-    };
 
     const cards =  cardsData.map(function(itCard) {
         return ` 
@@ -269,7 +269,7 @@ function getCards(cardsData) {
         </li>`;
     });
 
-    drawAllCards(cardsField);
+    drawMarkup(cardsField, cards.join(""));
 }
 
 function controlThemes() {
@@ -291,9 +291,9 @@ function controlThemes() {
 }
 
 function controlCardsFilters() {
+    const cardsField = document.querySelector(".cards");
     const filtersButtonsWrapper = document.querySelector(".card-view-buttons");
     const allFilterButtons = filtersButtonsWrapper.querySelectorAll(".card-view-button");
-    const cardsField = document.querySelector(".cards");
 
     function filtersButtonsClickHandler(evt) {
         evt.preventDefault();
@@ -315,11 +315,38 @@ function controlCardsFilters() {
 
 function controlCatedoriesFilters(cardsData) {
     const filtersButtonsWrapper = document.querySelector(".hashtags");
-    let cardState = null;
+
+    function createFiltersArray() {
+        const cards = document.querySelectorAll(".cards-item");
+        const categories = new Set;
+
+        cards.forEach((itCard) => {
+            categories.add(itCard.dataset.category);
+        });
+
+        return Array.from(categories);
+    }
+
+    function drawCategoriesButtons() {
+        const categories = ["All", ...createFiltersArray()];
+        const filtersWrapper = document.querySelector(".hashtags");
+
+        const filtersButtons = categories.map((itCategory) => {
+            return `
+                <li class="hashtag" data-category="${itCategory}">
+                    <a href="#">${itCategory}</a>
+                </li>
+            `
+        });
+
+        drawMarkup(filtersWrapper, filtersButtons.join(""));
+    }
 
     function filterCards(category) {
         return cardsData.filter((itCard) => {
-            if (itCard.category == category) return itCard;
+            if (itCard.category === category) {
+                return itCard;
+            }
         })
     }
 
@@ -327,26 +354,18 @@ function controlCatedoriesFilters(cardsData) {
         evt.preventDefault;
 
         const button = evt.target.closest(".hashtag");
-        let filteredCards;
 
         if (button) {
-            if (cardState == button.dataset.category) {
-                filteredCards = cardsData;
-                cardState = null;
-            } else {
-                cardState = button.dataset.category;
-
-                filteredCards = filterCards(button.dataset.category);
-            }
-
-            getCards(filteredCards);
+            button.dataset.category === "All" ? getCards(cardsData) : getCards(filterCards(button.dataset.category));
         }
     }
+
+    drawCategoriesButtons();
 
     filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler)
 }
 
+getCards(coursesData)
 controlCatedoriesFilters(coursesData);
 controlCardsFilters();
 controlThemes();
-getCards(coursesData)
