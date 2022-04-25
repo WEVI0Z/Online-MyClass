@@ -225,33 +225,7 @@ const coursesData = [
     }
 ];
 
-function getCurrentCardsData() {
-    const cards =  document.querySelectorAll(".cards-item");
-
-    const currentData = []
-
-    cards.forEach((itCard) => {
-        const cardTitle = itCard.querySelector("h2").innerText;
-        const cardCategory = itCard.querySelector("p").innerText;
-        const cardDuration =Number(itCard.querySelector(".card-meta-time dd").innerText.split(" ")[0]);
-        const cardRating = Number(itCard.querySelector(".card-meta-raiting dd") .innerText);
-        const cardImage = itCard.querySelector("img").src;
-        const cardPrice = Number(itCard.querySelector(".card-meta-price dd").innerText.split(" ")[0]);
-
-        const cardData = {
-            title : cardTitle,
-            category : cardCategory,
-            duration : cardDuration,
-            rating : cardRating,
-            image : cardImage,
-            price: cardPrice
-        }
-
-        currentData.push(cardData);
-    })    
-
-    return currentData;
-}
+let currentCards = coursesData;
 
 function removeAllActiveClasses(listOfElements){
     listOfElements.forEach(function(itElement) {
@@ -335,6 +309,8 @@ function getCards(cardsData) {
             </article>
         </li>`;
     });
+
+    currentCards = cardsData;
 
     drawMarkup(cardsField, cards.join(""));
 }
@@ -423,7 +399,11 @@ function controlCategoriesFilters(cardsData) {
         const button = evt.target.closest(".hashtag");
 
         if (button) {
-            button.dataset.category === "All" ? getCards(cardsData) : getCards(filterCards(button.dataset.category));
+            let filteredCards;
+            
+            button.dataset.category === "All" ? filteredCards = cardsData : filteredCards = filterCards(button.dataset.category);
+
+            getCards(filteredCards);
         }
     }
 
@@ -471,13 +451,9 @@ function controlSortingFilters() {
         const button = evt.target.closest(".sort-item");
 
         if(button) {
-            const currentCards = getCurrentCardsData();
+            const sortedCards =  currentCards.sort(SORT_TYPES[`${button.dataset.type}`]);
 
-            console.log(currentCards[0].rating)
-            
-            currentCards.sort(SORT_TYPES[`${button.dataset.type}`]);
-
-            getCards(currentCards);
+            getCards(sortedCards);
         }
     }
 
