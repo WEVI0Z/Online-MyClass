@@ -1,3 +1,5 @@
+const TIMEOUT_INTERVAL = 500;
+
 const coursesData = [
     {
         title : "Полный курс по JavaScript + React - с нуля до результата",
@@ -227,7 +229,17 @@ const coursesData = [
 
 let currentCards = coursesData;
 
-function removeAllActiveClasses(listOfElements){
+let lastTimeOut;
+
+function debounce(action, evt) {
+    if (lastTimeOut) {
+        clearTimeout(lastTimeOut);
+    }
+
+    lastTimeOut = setTimeout(action, TIMEOUT_INTERVAL, evt);
+}
+
+function removeAllActiveClasses(listOfElements) {
     listOfElements.forEach(function(itElement) {
         itElement.classList.remove("active");
     })
@@ -236,7 +248,7 @@ function removeAllActiveClasses(listOfElements){
 function drawMarkup(field, markup) {
     field.innerHTML = "";
     field.insertAdjacentHTML("afterBegin", markup);
-};
+}
 
 function getCards(cardsData) {
     const cardsField = document.querySelector(".cards");
@@ -324,13 +336,19 @@ function controlThemes() {
         evt.preventDefault();
         targetButton = evt.target.closest('li');
 
+        if (!targetButton) {
+            return null;
+        }
+
         htmlElement.dataset.themeName = targetButton.dataset.type;
 
         removeAllActiveClasses(allThemesButtons);
         targetButton.querySelector(".theme-button").classList.add("active");
     }
 
-    themesButtonsWrapper.addEventListener("click", themesButtonsClickHandler)
+    const debouncedThemesButtonsClickHandler = debounce.bind(null, themesButtonsClickHandler);
+
+    themesButtonsWrapper.addEventListener("click", debouncedThemesButtonsClickHandler)
 }
 
 function controlCardsThemes() {
@@ -353,7 +371,9 @@ function controlCardsThemes() {
         targetButton.querySelector(".card-view-button").classList.add("active");
     }
 
-    themesButtonsWrapper.addEventListener("click", filtersButtonsClickHandler);
+    const debouncedFiltersButtonsClickHandler = debounce.bind(null, filtersButtonsClickHandler);
+
+    themesButtonsWrapper.addEventListener("click", debouncedFiltersButtonsClickHandler);
 }
 
 function controlCategoriesFilters(cardsData) {
@@ -409,7 +429,9 @@ function controlCategoriesFilters(cardsData) {
 
     drawCategoriesButtons();
 
-    filtersButtonsWrapper.addEventListener("click", filtersButtonsClickHandler);
+    const debouncedFiltersButtonsClickHandler = debounce.bind(null, filtersButtonsClickHandler);
+
+    filtersButtonsWrapper.addEventListener("click", debouncedFiltersButtonsClickHandler);
 }
 
 function controlSortingFilters() {
@@ -457,7 +479,9 @@ function controlSortingFilters() {
         }
     }
 
-    sortButtonsWrapper.addEventListener("click", sortButtonClickHandler);
+    const debouncedSortButtonClickHandler = debounce.bind(null, sortButtonClickHandler);
+
+    sortButtonsWrapper.addEventListener("click", debouncedSortButtonClickHandler);
 }
 
 getCards(coursesData);
